@@ -21,9 +21,9 @@ public class DiscoveryTest {
 
     @Test
     void nacosServiceDiscoveryTest() throws NacosException {
-        for(String setvice : nacosServiceDiscovery.getServices()){
-            System.out.println(setvice);
-            List<ServiceInstance> serviceInstances= nacosServiceDiscovery.getInstances(setvice);
+        for(String service : nacosServiceDiscovery.getServices()){
+            System.out.println(service);
+            List<ServiceInstance> serviceInstances= nacosServiceDiscovery.getInstances(service);
             for (ServiceInstance instance:serviceInstances){
                 System.out.println("ip: " + instance.getHost() + ", port: " + instance.getPort());
             }
