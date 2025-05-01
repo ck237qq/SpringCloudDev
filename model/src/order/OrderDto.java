@@ -2,8 +2,10 @@ package order;
 
 
 import lombok.Data;
+import product.ProductDto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 public class OrderDto {
@@ -12,5 +14,5 @@ public class OrderDto {
     private Long userId;
     private String nickName;
     private String address;
-//    private List<Product> products;
+    private List<ProductDto> productDtoList;
 }
