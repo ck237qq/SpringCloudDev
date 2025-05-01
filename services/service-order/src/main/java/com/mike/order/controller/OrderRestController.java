@@ -35,19 +35,15 @@ public class OrderRestController {
     }
 
     private List<ProductDto> getProductDtoList() {
-        List<ProductDto> productDtoList = new ArrayList<>();
-
         String url = "http://seata-product/findProduct";
 
-        productDtoList = restTemplate.exchange(
+        return restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 new ParameterizedTypeReference<List<ProductDto>>() {
                 }
         ).getBody();
-
-        return productDtoList;
     }
 
 }
