@@ -1,14 +1,40 @@
 spring:
+  profiles:
+    active: dev
   application:
-    name: seata-order
+    name: service-order
+
   cloud:
     inetutils:
       useOnlySiteLocalInterfaces: true
     nacos:
       server-addr: 127.0.0.1:8848
       config:
-        import-check:
-          enabled: false
+        namespace: ${spring.profiles.active:public}
+
 
 server:
   port: 12000
+
+---
+spring:
+  config:
+    import:
+      - nacos:service-order.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    import:
+      - nacos:service-order.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: test
+---
+spring:
+  config:
+    import:
+      - nacos:service-order.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: prod
+---

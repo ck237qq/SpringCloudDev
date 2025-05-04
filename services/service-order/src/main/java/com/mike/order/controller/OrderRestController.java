@@ -3,6 +3,7 @@ package com.mike.order.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.mike.order.properties.OrderProperties;
 import order.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -18,6 +19,16 @@ public class OrderRestController {
 
     @Autowired
     RestTemplate restTemplate;
+
+    @Autowired
+    OrderProperties orderProperties;
+    /**
+     * 註冊中心測試
+     */
+    @GetMapping("/config")
+    public void config() {
+        System.out.println(orderProperties.getTimeout() +","+ orderProperties.getAutoConfirm());
+    }
 
     @GetMapping("/getOrder")
     public OrderDto getOrder() {

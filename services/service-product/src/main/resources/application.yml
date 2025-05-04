@@ -8,7 +8,7 @@ spring:
       server-addr: 127.0.0.1:8848
       config:
         import-check:
-          enabled: false
+          enabled: false #暫時不開啟引入配置中心的設定檔設定
 
 server:
   port: 12001
