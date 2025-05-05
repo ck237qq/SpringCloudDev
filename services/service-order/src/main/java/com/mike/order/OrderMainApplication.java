@@ -7,13 +7,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-@SpringBootApplication
 @Slf4j
+@SpringBootApplication
+@EnableFeignClients
 public class OrderMainApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrderMainApplication.class, args);

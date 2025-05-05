@@ -3,6 +3,7 @@ package com.mike.order.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.mike.order.feign.ProductFeignClient;
 import com.mike.order.properties.OrderProperties;
 import order.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,24 @@ import product.ProductDto;
 public class OrderRestController {
 
     @Autowired
+    ProductFeignClient productFeignClient;
+
+
+
+    @Autowired
     RestTemplate restTemplate;
 
     @Autowired
     OrderProperties orderProperties;
+
+    /**
+     * Feign 遠端呼叫測試
+     */
+    @GetMapping("/feign")
+    public void feign() {
+        System.out.println(productFeignClient.findProduct());
+    }
+
     /**
      * 註冊中心測試
      */
@@ -55,5 +70,4 @@ public class OrderRestController {
                 }
         ).getBody();
     }
-
 }
