@@ -26,6 +26,11 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!-- 兜底返回機制 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
         <!-- openfeign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

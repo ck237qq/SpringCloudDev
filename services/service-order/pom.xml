@@ -30,6 +30,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- 負載均衡 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
