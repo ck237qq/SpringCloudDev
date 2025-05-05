@@ -9,13 +9,14 @@ import product.ProductDto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class ProductController {
 
 
     @GetMapping("/findProduct")
-    public List<ProductDto> findProduct() {
+    public List<ProductDto> findProduct() throws InterruptedException {
         List<ProductDto> productDtoList = new ArrayList<>();
         for (long i = 0; i < 10L; i++) {
             ProductDto productDto = new ProductDto();
@@ -25,6 +26,8 @@ public class ProductController {
             productDto.setNum(0);
             productDtoList.add(productDto);
         }
+
+        TimeUnit.SECONDS.sleep(100);
 
         return productDtoList;
     }

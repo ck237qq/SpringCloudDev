@@ -1,6 +1,6 @@
 spring:
   application:
-    name: seata-product
+    name: service-product
   cloud:
     inetutils:
       useOnlySiteLocalInterfaces: true

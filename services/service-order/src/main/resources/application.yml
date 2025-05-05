@@ -1,9 +1,9 @@
 spring:
   profiles:
     active: dev
+    include: feign #引入application-feign.yml
   application:
     name: service-order
-
   cloud:
     inetutils:
       useOnlySiteLocalInterfaces: true

@@ -60,7 +60,7 @@ public class OrderRestController {
     }
 
     private List<ProductDto> getProductDtoList() {
-        String url = "http://seata-product/findProduct";
+        String url = "http://service-product/findProduct";
 
         return restTemplate.exchange(
                 url,
