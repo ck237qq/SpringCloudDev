@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class TokenResquestInterceptor implements RequestInterceptor {
+public class TokenRequestInterceptor implements RequestInterceptor {
     public void apply(RequestTemplate requestTemplate) {
         requestTemplate.header("token", UUID.randomUUID().toString());
     }
