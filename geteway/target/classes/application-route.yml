@@ -5,8 +5,12 @@ spring:
         - id: order-rote
           uri: lb://server-order
           predicates:
-            - Path=/order/**
+            - name: Path
+              args:
+                patterns: /order/**
+          order: 1
         - id: product-rote
           uri: lb://server-product
           predicates:
             - Path=/product/**
+          order: 2
