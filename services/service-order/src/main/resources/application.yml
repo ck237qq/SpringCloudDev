@@ -3,7 +3,7 @@ spring:
     active: dev
     include: feign #引入application-feign.yml
   application:
-    name: service-order
+    name: server-order
   cloud:
     inetutils:
       useOnlySiteLocalInterfaces: true
@@ -12,6 +12,13 @@ spring:
       config:
         namespace: ${spring.profiles.active:public}
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /order/v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /order/swagger-ui.html
 
 server:
   port: 12000

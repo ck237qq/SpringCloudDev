@@ -7,5 +7,17 @@ spring:
     nacos:
       server-addr: 127.0.0.1:8848
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      -   name: gateway-service
+          url: /v3/api-docs
+      -   name: service-order
+          url: /order/v3/api-docs
 server:
-  port: 80
+  port: 10000
