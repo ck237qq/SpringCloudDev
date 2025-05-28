@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: postgres
+    password: a751021a
+  jpa:
+    hibernate:
+      ddl-auto: update
+  profiles:
+    active: dev
+    include: feign #引入application-feign.yml
+  application:
+    name: server-customer
+  cloud:
+    inetutils:
+      useOnlySiteLocalInterfaces: true
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        namespace: ${spring.profiles.active:public}
+
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /customer/v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /customer/swagger-ui.html
+
+server:
+  port: 12002
+
+---
+spring:
+  config:
+    import:
+      - nacos:service-customer.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: dev
+---
+spring:
+  config:
+    import:
+      - nacos:service-customer.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: test
+---
+spring:
+  config:
+    import:
+      - nacos:service-customer.properties?group=DEFAULT_GROUP
+    activate:
+      on-profile: prod
+---

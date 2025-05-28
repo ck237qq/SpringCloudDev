@@ -10,6 +10,9 @@
     </parent>
 
     <packaging>pom</packaging>
+    <modules>
+        <module>service-customer</module>
+    </modules>
 
     <artifactId>services</artifactId>
 

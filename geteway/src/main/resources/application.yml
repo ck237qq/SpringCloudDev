@@ -15,9 +15,11 @@ springdoc:
     enabled: true
     config-url: /v3/api-docs/swagger-config
     urls:
-      -   name: gateway-service
-          url: /v3/api-docs
-      -   name: service-order
-          url: /order/v3/api-docs
+      - name: gateway-server
+        url: /v3/api-docs
+      - name: order-server
+        url: /order/v3/api-docs
+      - name: customer-server
+        url: /customer/v3/api-docs
 server:
   port: 10000
