@@ -1,4 +1,5 @@
-package com.example.entity;
+package com.example.entity.hexagram;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,21 +8,17 @@ import jakarta.persistence.Id;
 import lombok.Data;
 
 /**
- * 卦象
+ * 卦象種類
  */
 @Data
 @Entity
-public class Hexagram {
+public class HexagramKind {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long hexagramId;
+	private Long hexagramKindId;
 	
-	private Long hexagramNo;
-	
-	private String hexagramName;
-	
-	private Long topHexagramKindId;
+	private Long hexagramKindNo;
 
-	private Long upHexagramKindId;
+	private String hexagramKindName;
 
 }

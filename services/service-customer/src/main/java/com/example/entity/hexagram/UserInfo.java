@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.entity.hexagram;
 
 
 import java.sql.Time;

@@ -1,7 +1,7 @@
 package com.example.service;
 
 import _event.EventMessage;
-import hexagram.*;
+import customer_server.hexagram.*;
 
 import java.util.List;
 

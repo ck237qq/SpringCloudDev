@@ -1,6 +1,6 @@
-package com.example.repository;
+package com.example.repository.hexagram;
 
-import com.example.entity.Hexagram;
+import com.example.entity.hexagram.Hexagram;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

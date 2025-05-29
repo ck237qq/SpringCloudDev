@@ -1,4 +1,4 @@
-package hexagram;
+package customer_server.hexagram;
 
 import lombok.Data;
 
